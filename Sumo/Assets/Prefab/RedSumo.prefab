@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3246259107561199343, guid: 0ccb6e6321f726a41b3b9eae6bf80322, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3246259107561199343, guid: 0ccb6e6321f726a41b3b9eae6bf80322, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3246259107603241884, guid: 0ccb6e6321f726a41b3b9eae6bf80322, type: 3}
       propertyPath: m_Name
       value: RedSumo
@@ -59,5 +67,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4264532626906769729, guid: 0ccb6e6321f726a41b3b9eae6bf80322, type: 3}
+      propertyPath: m_sumoControls
+      value: 
+      objectReference: {fileID: 11400000, guid: 8cc038c1d122da6449551bc6812f8ee6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ccb6e6321f726a41b3b9eae6bf80322, type: 3}

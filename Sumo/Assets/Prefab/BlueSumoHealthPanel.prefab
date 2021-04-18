@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2712173600973720345}
   - component: {fileID: 2712173600973720347}
+  - component: {fileID: 6268127526332961598}
+  - component: {fileID: 6856723077290133775}
+  - component: {fileID: 2340492114827726124}
   m_Layer: 5
   m_Name: BlueSumoHealthPanel
   m_TagString: Untagged
@@ -46,6 +49,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2712173600973720326}
   m_CullTransparentMesh: 1
+--- !u!114 &6268127526332961598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2712173600973720326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f972f6aeecbff994da7062ad83771402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_imageFilled: {fileID: 6884940759916234195}
+--- !u!114 &6856723077290133775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2712173600973720326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: 2340492114827726124}
+  _installerPrefabs: []
+  _autoRun: 1
+  _kernel: {fileID: 0}
+--- !u!114 &2340492114827726124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2712173600973720326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b1333241a08074eb8096fa7fc8001e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_eSumoType: 0
 --- !u!1 &3358871583944790298
 GameObject:
   m_ObjectHideFlags: 0

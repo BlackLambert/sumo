@@ -145,7 +145,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -160,6 +160,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3425723456614205187}
   - component: {fileID: 3579360975920561200}
+  - component: {fileID: 7423176964763606861}
+  - component: {fileID: 7371606429037877233}
+  - component: {fileID: 5287907930077106577}
   m_Layer: 5
   m_Name: RedSumoHealthPanel
   m_TagString: Untagged
@@ -196,3 +199,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8220260784271673731}
   m_CullTransparentMesh: 1
+--- !u!114 &7423176964763606861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8220260784271673731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f972f6aeecbff994da7062ad83771402, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_imageFilled: {fileID: 3093330253755736356}
+--- !u!114 &7371606429037877233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8220260784271673731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08eca9f7688a0a24685b89133b020c8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: 5287907930077106577}
+  _installerPrefabs: []
+  _autoRun: 1
+  _kernel: {fileID: 0}
+--- !u!114 &5287907930077106577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8220260784271673731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5b1333241a08074eb8096fa7fc8001e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_eSumoType: 1
