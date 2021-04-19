@@ -23,21 +23,24 @@ namespace Sumo
 
         protected virtual void Start()
 		{
-            foreach (Sumo.Type type in Enum.GetValues(typeof(Sumo.Type)))
-                m_game.sumoGet(type).evOnHealthChanged += checkForRestart;
+            foreach (Sumo.Type eType in Enum.GetValues(typeof(Sumo.Type)))
+                m_game.sumoGet(eType).evOnHealthChanged += checkForRestart;
         }
 
         protected virtual void OnDestroy()
         {
-            foreach (Sumo.Type type in Enum.GetValues(typeof(Sumo.Type)))
-                m_game.sumoGet(type).evOnHealthChanged -= checkForRestart;
+            foreach (Sumo.Type eType in Enum.GetValues(typeof(Sumo.Type)))
+                m_game.sumoGet(eType).evOnHealthChanged -= checkForRestart;
         }
 
-        private void checkForRestart()
+        private void checkForRestart(int _iHealth)
 		{
-            foreach (Sumo.Type type in Enum.GetValues(typeof(Sumo.Type)))
+            if (_iHealth > 0)
+                return;
+
+            foreach (Sumo.Type eType in Enum.GetValues(typeof(Sumo.Type)))
 			{
-                if (m_game.sumoGet(type).iHealth > 0)
+                if (m_game.sumoGet(eType).iHealth > 0)
                     continue;
                 StartCoroutine(restart());
                 break;

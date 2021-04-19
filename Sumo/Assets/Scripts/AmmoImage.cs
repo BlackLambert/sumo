@@ -9,9 +9,9 @@ namespace Sumo
         [SerializeField]
         private Animator m_animator;
 
-        public void setFilled(bool bFilled)
+        public void setFilled(bool _bFilled)
 		{
-            m_animator.SetBool("Filled", bFilled);
+            m_animator.SetBool("Filled", _bFilled);
         }
     }
 }

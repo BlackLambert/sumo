@@ -7,6 +7,8 @@ namespace Sumo
 {
 	public class SumoAmmoCollector : MimiBehaviour, TripodCollidable
 	{
+		[SerializeField]
+		private AudioSource m_audioSourceCollect;
 		private Sumo m_sumo;
 
 		[Inject]
@@ -18,6 +20,7 @@ namespace Sumo
 		public void CollidedWith(Tripod _tripod)
 		{
 			m_sumo.increaseAmmo();
+			m_audioSourceCollect.Play();
 			_tripod.Destroy();
 		}
 	}

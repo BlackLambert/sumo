@@ -34,9 +34,9 @@ namespace Sumo
             m_sumo.evOnHealthChanged -= checkForDeath;
         }
 
-		private void checkForDeath()
+		private void checkForDeath(int _iHealth)
 		{
-			if (m_sumo.iHealth > 0)
+			if (_iHealth > 0)
 				return;
 			StartCoroutine(kill());
 		}
@@ -44,7 +44,9 @@ namespace Sumo
 		private IEnumerator kill()
 		{
 			m_game.bPaused = true;
-			m_deathAnimaton.trigger();
+            m_deathAnimaton.gameObject.SetActive(true);
+
+            m_deathAnimaton.trigger();
             yield return new WaitForSeconds(m_fDisableSumoOnDeathAfter);
             m_sumoBehaviour.deactivate();
 

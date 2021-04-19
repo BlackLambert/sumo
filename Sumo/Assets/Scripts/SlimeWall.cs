@@ -8,9 +8,7 @@ namespace Sumo
     {
         [SerializeField]
         private GameObject m_goSprite;
-
         private bool m_bActive = false;
-
 
 		protected virtual void Start()
 		{

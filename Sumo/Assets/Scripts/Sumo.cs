@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Sumo
 {
@@ -51,7 +52,7 @@ namespace Sumo
             }
         }
 
-        public event Action evOnHealthChanged;
+        public event Action<int> evOnHealthChanged;
         private int m_iHealth;
         public int iHealth
 		{
@@ -59,7 +60,7 @@ namespace Sumo
 			set
 			{
                 m_iHealth = value;
-                evOnHealthChanged?.Invoke();
+                evOnHealthChanged?.Invoke(m_iHealth);
             }
         }
 
@@ -76,10 +77,24 @@ namespace Sumo
             get;
         }
 
+        public event Action evOnScoreChanged;
+        private int m_iScore;
+        public int iScore
+        {
+            get { return m_iScore; }
+            private set
+            {
+                m_iScore = value;
+                evOnScoreChanged?.Invoke();
+            }
+        }
+
         public Sumo(Type _eType, 
+            int _iCurrentScore,
             SumoSettings _settings)
 		{
             eType = _eType;
+            this.iScore = _iCurrentScore;
             this.iMaxHealth = _settings.iMaxHealth;
             this.iHealth = _settings.iMaxHealth;
             this.fImmortalTimeAfterHit = _settings.fImmortalTimeAfterHit;
@@ -92,17 +107,23 @@ namespace Sumo
 
         public void setImmortal()
 		{
-            fImmortalityTimer = fImmortalTimeAfterHit;
+            this.fImmortalityTimer = fImmortalTimeAfterHit;
 		}
 
         public void increaseAmmo()
 		{
-            iAmmoCount++;
+            this.iAmmoCount++;
 		}
 
         public void decreaseAmmo()
         {
-            iAmmoCount--;
+            this.iAmmoCount--;
+        }
+
+        public void increaseScore()
+		{
+            this.iScore++;
+            PlayerPrefs.SetInt(((int)eType).ToString(), this.iScore);
         }
 
         public enum Type

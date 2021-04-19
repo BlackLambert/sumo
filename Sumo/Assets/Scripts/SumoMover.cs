@@ -34,29 +34,42 @@ namespace Sumo
 
         protected virtual void Update()
 		{
-            if (m_game.bPaused)
-                return;
+			if (m_game.bPaused)
+				return;
 
-            if(Input.GetKey(m_controls.keyCodeLeft) && !this.bIsAtMaxHorizontalSpeed)
+			checkForLeftMovement();
+			checkForRightMovement();
+			checkForJump();
+		}
+
+		private void checkForLeftMovement()
+		{
+			if (Input.GetKey(m_controls.keyCodeLeft) && !this.bIsAtMaxHorizontalSpeed)
 			{
 				Vector2 v2Force = v2CalculateVerticalForce(Vector2.left);
 				m_rigidTarget.AddForce(v2Force, ForceMode2D.Impulse);
-                m_animator.turnLeft();
-            }
+				m_animator.turnLeft();
+			}
+		}
 
+		private void checkForRightMovement()
+		{
 			if (Input.GetKey(m_controls.keyCodeRight) && !this.bIsAtMaxHorizontalSpeed)
-            {
-                Vector2 v2Force = v2CalculateVerticalForce(Vector2.right);
-                m_rigidTarget.AddForce(v2Force, ForceMode2D.Impulse);
-                m_animator.turnRight();
-            }
-
-            if(Input.GetKeyDown(m_controls.keyCodeJump) && m_sumoBehaviour.bIsGrounded)
 			{
-                Vector2 v2Force = v2CalculateJumpForce();
-                m_rigidTarget.AddForce(v2Force, ForceMode2D.Force);
-            }
-        }
+				Vector2 v2Force = v2CalculateVerticalForce(Vector2.right);
+				m_rigidTarget.AddForce(v2Force, ForceMode2D.Impulse);
+				m_animator.turnRight();
+			}
+		}
+
+		private void checkForJump()
+		{
+			if (Input.GetKeyDown(m_controls.keyCodeJump) && m_sumoBehaviour.bIsGrounded)
+			{
+				Vector2 v2Force = v2CalculateJumpForce();
+				m_rigidTarget.AddForce(v2Force, ForceMode2D.Force);
+			}
+		}
 
 		private Vector2 v2CalculateVerticalForce(Vector2 _v2Direction)
 		{

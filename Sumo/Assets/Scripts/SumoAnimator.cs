@@ -6,24 +6,27 @@ namespace Sumo
 {
     public class SumoAnimator : MimiBehaviour
     {
-        [SerializeField]
+		private const string c_strHitTriggerName = "Hit";
+		private const string c_strImmortalBoolName = "Immortal";
+		private const string c_strDashBoolName = "Dashing";
+		[SerializeField]
         private Animator m_animator;
         [SerializeField]
         private Transform m_transSprite;
 
         public void hit()
 		{
-            m_animator.SetTrigger("Hit");
+            m_animator.SetTrigger(c_strHitTriggerName);
         }
 
         public void setMortality(bool _bImmortal)
 		{
-            m_animator.SetBool("Immortal", _bImmortal);
+            m_animator.SetBool(c_strImmortalBoolName, _bImmortal);
 		}
 
         public void setDashing(bool _bDashing)
 		{
-            m_animator.SetBool("Dashing", _bDashing);
+            m_animator.SetBool(c_strDashBoolName, _bDashing);
 		}
 
         public void turnRight()

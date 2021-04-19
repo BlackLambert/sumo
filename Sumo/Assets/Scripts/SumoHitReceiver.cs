@@ -7,6 +7,8 @@ namespace Sumo
 	{
         [SerializeField]
         private SumoAnimator m_sumoAnimator;
+		[SerializeField]
+		private AudioSource m_audioSourceHit;
         private Sumo m_sumoModel;
 		private Game m_game;
 
@@ -38,6 +40,7 @@ namespace Sumo
 			m_sumoAnimator.hit();
 			m_sumoModel.setImmortal();
 			m_sumoAnimator.setMortality(true);
+			m_audioSourceHit.Play();
 		}
 
 		protected virtual void Update()

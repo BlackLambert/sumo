@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -31,9 +28,9 @@ namespace Sumo
             m_sumoModel.evOnHealthChanged -= updateBar;
         }
 
-		private void updateBar()
+		private void updateBar(int _iHealth)
 		{
-            m_imageFilled.fillAmount = Mathf.Clamp01( (float)m_sumoModel.iHealth / (float)m_sumoModel.iMaxHealth);
+            m_imageFilled.fillAmount = Mathf.Clamp01( (float)_iHealth / (float)m_sumoModel.iMaxHealth);
 
         }
 	}

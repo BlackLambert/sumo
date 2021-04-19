@@ -6,17 +6,20 @@ namespace Sumo
 {
     public class TripodAnimator : MimiBehaviour
     {
-        [SerializeField]
+		private const string c_strFallingBoolName = "Falling";
+		private const string c_strKilledTriggerName = "Killed";
+
+		[SerializeField]
         private Animator _animator;
 
         public void setFalling(bool _bFalling)
 		{
-            _animator.SetBool("Falling", _bFalling);
+            _animator.SetBool(c_strFallingBoolName, _bFalling);
 		}
 
         public void kill()
 		{
-            _animator.SetTrigger("Killed");
+            _animator.SetTrigger(c_strKilledTriggerName);
         }
     }
 }

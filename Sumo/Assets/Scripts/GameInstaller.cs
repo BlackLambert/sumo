@@ -29,8 +29,8 @@ namespace Sumo
 
         private void bindGame()
         {
-            Sumo blueSumo = new Sumo(Sumo.Type.Blue, m_sumoSettings);
-            Sumo redSumo = new Sumo(Sumo.Type.Red, m_sumoSettings);
+            Sumo blueSumo = new Sumo(Sumo.Type.Blue, iGetScoreOf(Sumo.Type.Blue), m_sumoSettings);
+            Sumo redSumo = new Sumo(Sumo.Type.Red, iGetScoreOf(Sumo.Type.Red), m_sumoSettings);
             Game game = new Game(new Sumo[] { blueSumo, redSumo });
             Container.Bind<Game>().FromInstance(game).AsSingle();
         }
@@ -42,5 +42,11 @@ namespace Sumo
 			Container.BindFactory<Sumo, SumoBehaviour, SumoBehaviour.Factory>().FromFactory<SumoFactory>();
             Container.BindFactory<Slime, Slime.Factory>().FromComponentInNewPrefab(m_slime);
 		}
+
+        private int iGetScoreOf(Sumo.Type _sumoType)
+		{
+            string strKey = ((int)_sumoType).ToString();
+            return PlayerPrefs.HasKey(strKey) ? PlayerPrefs.GetInt(strKey) : 0;
+        }
 	}
 }

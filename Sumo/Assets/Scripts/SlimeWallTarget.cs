@@ -7,7 +7,5 @@ namespace Sumo
     public interface SlimeWallTarget 
     {
         void hit(SlimeWall _wall);
-
-        
     }
 }

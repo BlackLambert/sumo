@@ -17,13 +17,13 @@ namespace Sumo
             m_groundable = _groundable;
         }
 
-		private void OnTriggerEnter2D(Collider2D collision)
+		private void OnTriggerEnter2D(Collider2D _collision)
 		{
 			m_iObjectsCount++;
 			m_groundable.bIsGrounded = this.bIsGrounded;
 		}
 
-		private void OnTriggerExit2D(Collider2D collision)
+		private void OnTriggerExit2D(Collider2D _collision)
 		{
 			m_iObjectsCount--;
 			m_groundable.bIsGrounded = this.bIsGrounded;
